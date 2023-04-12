@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadController;
 
 use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Livewire\Chat\Main;
@@ -24,8 +25,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', [HomeController::class, 'index']);
+
 Route::get('/upload', [UploadController::class, 'upload']);
-Route::get('/upload/proses', [UploadController::class, 'proses_upload']);
+Route::post('/upload/proses', [UploadController::class, 'proses_upload']);
+
+
 
 // Route::get('/home', [HomeController::class, 'index']);
 // Route::get('/home/{kategori}', [HomeController::class, 'index']);
