@@ -83,7 +83,7 @@
         </div>
       </div>
 
-      <a class="add-post-btn" onclick="">
+      <a class="add-post-btn" href="/upload">
         <img class="add-post-img" src="img/add-button.png" alt="add-button icon" width="50" height="50">
       </a>
   </div>
