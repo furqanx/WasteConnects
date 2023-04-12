@@ -24,15 +24,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [HomeController::class, 'index']);
-
-Route::get('/home/{kategori}', [HomeController::class, 'index']);
+// Route::get('/home', [HomeController::class, 'index']);
+// Route::get('/home/{kategori}', [HomeController::class, 'index']);
 
 // livewire routes 
 Route::get('/users',CreateChat::class)->name('users');
 Route::get('/chat{key?}',Main::class)->name('chat');
 
 
-Route::get('user', [UserController::class, 'index']);
-
-Route::get('post', [PostController::class, 'index']);
+// Route::get('user', [UserController::class, 'index']);
+// Route::get('post', [PostController::class, 'index']);
