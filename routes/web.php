@@ -24,6 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/upload', [UploadController::class, 'upload']);
+Route::get('/upload/proses', [UploadController::class, 'proses_upload']);
+
 // Route::get('/home', [HomeController::class, 'index']);
 // Route::get('/home/{kategori}', [HomeController::class, 'index']);
 
