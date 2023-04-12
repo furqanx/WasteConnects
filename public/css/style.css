@@ -119,6 +119,17 @@ a.none {
   color: black;
 }
 
+/** kode CSS untuk halaman upload postingan */
+  .form-group {
+    margin-top: 20px;
+  }
+
+  /** kode CSS untuk upload gambar */
+  #imagePreview {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
 
 /* 768 kebawah, div yang ada class desktop tdk di display */
 @media only screen and (min-width: 769px) {
