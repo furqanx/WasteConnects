@@ -22,27 +22,27 @@
     </div>
     <div class="container-fluid scroll-container hide-scroll mt-2 phone">
         <div class="scroll-item">
-            <img class="mx-3" src="img/water-bottle.png" alt="Gambar 1">
+            <img class="mx-3" src="{{ asset('img/water-bottle.png') }}" alt="Gambar 1">
             <p>Botol</p>
         </div>
         <div class="scroll-item">
-            <img class="mx-3" src="img/water-bottle.png" alt="Gambar 1">
+            <img class="mx-3" src="{{ asset('img/water-bottle.png') }}" alt="Gambar 1">
             <p>Elektronik</p>
         </div>
         <div class="scroll-item">
-            <img class="mx-3" src="img/water-bottle.png" alt="Gambar 1">
+            <img class="mx-3" src="{{ asset('img/water-bottle.png') }}" alt="Gambar 1">
             <p>Besi</p>
         </div>
         <div class="scroll-item">
-            <img class="mx-3" src="img/water-bottle.png" alt="Gambar 1">
+            <img class="mx-3" src="{{ asset('img/water-bottle.png') }}" alt="Gambar 1">
             <p>Baterai</p>
         </div>
         <div class="scroll-item">
-            <img class="mx-3" src="img/water-bottle.png" alt="Gambar 1">
+            <img class="mx-3" src="{{ asset('img/water-bottle.png') }}" alt="Gambar 1">
             <p>Minyak Bekas</p>
         </div>
         <div class="scroll-item">
-            <img class="mx-3" src="img/water-bottle.png" alt="Gambar 1">
+            <img class="mx-3" src="{{ asset('img/water-bottle.png') }}" alt="Gambar 1">
             <p>Kain</p>
         </div>
     </div>
