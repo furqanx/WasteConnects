@@ -8,10 +8,7 @@
     <link href="style.css" rel="stylesheet"></link>
   </head>
 
-  <body>
-    <?php
-    include('layout/navbar.html');
-    ?>
+  
 
     <?php
     include('layout/kategoripanel.html');
