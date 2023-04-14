@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class CathegoryController extends Controller
 {
-    public function index () {
+    public function kategori_barang ()
+    {
         return view('home');
     }
-
 }

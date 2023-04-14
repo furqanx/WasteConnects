@@ -9,7 +9,7 @@
         </div>
         @endif
 
-        <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+        <form action="/uploadproduct/proses" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
 
             <div class="form-group">
@@ -27,12 +27,16 @@
             <div class="form-group">
                 <label for="cathegoryFormInput">Kategori Sampah</label><br>
                 <select class="form-select" id="cathegoryInput" aria-label="Select Cathegory" name="product_cathegory">
-                    <option selected>Botol</option>
+                    <option selected value="plastik">Plastik</option>
                     <option value="elektronik">Elektronik</option>
-                    <option value="besi">Besi</option>
-                    <option value="Baterai">Baterai</option>
-                    <option value="MinyakBekas">Minyak Bekas</option>
-                    <option value="Kain">Kain</option>
+                    <option value="kaca">Kaca</option>
+                    <option value="logam">Logam</option>
+                    <option value="B3">Bahan Berbahaya dan Beracun</option>
+                    <option value="kertas">Kertas</option>
+                    <option value="textile">Textile</option>
+                    <option value="medis">Medis</option>
+                    <option value="karet">Karet</option>
+                    <option value="minyakbekas">Minyak Bekas</option>
                 </select>
             </div>
 
