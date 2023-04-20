@@ -8,6 +8,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\CathegoryController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Livewire\Chat\Main;
@@ -27,10 +29,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
 /** route ke halaman home */
 Route::get('/home', [PostController::class, 'showall']);
+
+/** route ke halaman login  */
+Route::get('/login', [LoginController::class, 'index']);
+
+/** route ke halaman login  */
+Route::get('/register', [RegisterController::class, 'index']);
 
 /** route ke halaman profile */
 Route::get('/profile/{id}', [PostController::class, 'show_byId']);
