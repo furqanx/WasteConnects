@@ -28,6 +28,8 @@ class User extends Authenticatable
         'path_gambar_user',
     ];
 
+    // protected $guarded = ['id'];
+
     /**
      * The attributes that should be hidden for serialization.
      *
