@@ -9,11 +9,11 @@ use App\Models\Product;
 
 class UploadController extends Controller
 {
-    public function upload(){
+    public function index(){
 		return view('uploadproduct');
 	}
 
-	public function proses_upload(Request $request)
+	public function store(Request $request)
 	{
 		// Validasi inputan
 		$request->validate([
@@ -23,11 +23,11 @@ class UploadController extends Controller
 			'product_price' => 'required',
 			'product_description' => 'required',
 		]);
-
+		
 		// Menyimpan gambar ke dalam folder "public/images"
 		$imagePath = $request->file('product_image')->store('public/product_images');
 		$imageName = basename($imagePath);
-
+		
 		// Menyimpan data inputan ke dalam database
 		$product = new Product;
 		$product->user_id = Auth::user()->id;
@@ -37,8 +37,13 @@ class UploadController extends Controller
 		$product->product_price = $request->product_price;
 		$product->product_description = $request->product_description;
 		$product->save();
-
+		
 		// Redirect ke halaman utama
 		return redirect('/')->with('success', 'Sampah berhasil diupload.');
+	}
+
+	/** DEBUG */
+	public function debug () {
+		return request()->all();
 	}
 }
