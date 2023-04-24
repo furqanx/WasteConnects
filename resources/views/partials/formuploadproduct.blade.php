@@ -1,22 +1,23 @@
 <div class="container">    
     <div class="col-lg-8 mx-auto my-5">	
 
-        @if(count($errors) > 0)
+        {{-- @if(count($errors) > 0)
         <div class="alert alert-danger">
             @foreach ($errors->all() as $error)
             {{ $error }} <br/>
             @endforeach
         </div>
-        @endif
+        @endif --}}
 
-        <form action="/uploadproduct/proses" method="POST" enctype="multipart/form-data">
-            {{ csrf_field() }}
+        <form action="/uploadproduct/store" method="post" enctype="multipart/form-data">
+            {{-- {{ csrf_field() }} --}}
+            @csrf
 
             <div class="form-group">
                 <label for="imageFormInput">Gambar Barang</label><br>
                 <div id="imagePreview"></div>
                 {{-- <img src="img/profile.svg" class="image" /> --}}
-                <input type="file" class="form-control" id="imageInput" multiple accept="image/*" onchange="handleFiles(this.files) name="product_image">
+                <input type="file" class="form-control" id="imageInput" multiple accept="image/*" onchange="handleFiles(this.files)" name="product_image">
             </div>
 
             <div class="form-group">
@@ -42,7 +43,7 @@
 
             <div class="form-group">
                 <label for="currency-fieldInput">Harga Sampah</label>
-                <input type="text" name="form-control" id="priceInput" placeholder="Rp.0" name="product_price">
+                <input type="text" class="form-control" id="priceInput" placeholder="Rp.0" name="product_price">
             </div>
 
             <div class="form-group">
