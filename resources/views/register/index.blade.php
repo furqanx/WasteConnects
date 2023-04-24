@@ -56,17 +56,18 @@
                     </div> --}}
                     
                     <div class="form-group">
-                        <input type="text" class="form-control" id="emailInput" name="email" placeholder="name@gmail.com">
+                        <input type="text" class="form-control" id="nameInput" name="name" placeholder="name" @required(true)>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="emailInput" name="email" placeholder="name@gmail.com" @required(true)>
                     </div>
                     
                     <div class="form-group">
-                        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="password">
+                        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="password" @required(true)>
                     </div>
-
+                    
                     {{-- <div class="form-group">
-                        <input type="text" class="form-control" id="nameInput" name="name" placeholder="name">
-                    </div>
-                    <div class="form-group">
                         <input type="text" class="form-control" id="statusInput" name="status" placeholder="status">
                     </div>
                     <div class="form-group">

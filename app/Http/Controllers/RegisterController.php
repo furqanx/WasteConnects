@@ -13,12 +13,20 @@ class RegisterController extends Controller
 
     public function store (Request $request) {
 
-        // $this->validate($request, [
-        //     'name' => 'required|min:6|max:30',
-        //     'email' => 'required|email',
-        //     'password' => 'required|min:6|max:30'
-        // ]);
+        /** memeriksa validasi inputan registrasi  */
+        $this->validate($request, [
+            'nama_user' => 'required|min:6|max:30',
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:30'
+        ]);
         
+        /** mengirim inputan validasi ke database */
+        User::create([
+            'nama_user' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
         // $validatedData = $request->validate([
         //     'name' => 'required|min:6|max:30',
         //     'email' => 'required|email',
@@ -29,11 +37,6 @@ class RegisterController extends Controller
         // ]);
 
         // User::create($request->all());
-
-        User::create([
-            'email' => $request->email,
-            'password' => $request->password,
-        ]);
 
         return redirect('/login');
     }
