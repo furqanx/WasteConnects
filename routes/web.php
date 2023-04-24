@@ -33,8 +33,8 @@ Route::get('/', function () {
 
 
 /** route ke halaman home */
-Route::get('/home', [PostController::class, 'showall'])->middleware('auth');
-Route::get('/home/{category}', [PostController::class, 'show_byCategory'])->middleware('auth');
+Route::get('/home', [PostController::class, 'showall']);
+Route::get('/home/{category}', [PostController::class, 'show_byCategory']);
 
 
 
@@ -59,7 +59,7 @@ Route::post('/register/debug', [RegisterController::class, 'debug']);
 
 
 /** route ke halaman form mengupload barang */
-Route::get('/uploadproduct', [UploadController::class, 'index'])->middleware('auth');
+Route::get('/uploadproduct', [UploadController::class, 'index']);
 /** route untuk menyimpan data product */
 Route::post('/uploadproduct/store', [UploadController::class, 'store']);
 /** DEBUG route untuk menyimpan data upload data product */
@@ -68,20 +68,20 @@ Route::post('/uploadproduct/debug', [UploadController::class, 'debug']);
 
 /** TUNDA */
 /** route ke halaman profile */
-Route::get('/profile/{id}', [PostController::class, 'show_byId'])->middleware('auth');
+Route::get('/profile/{id}', [PostController::class, 'show_byId']);
 /** DEBUG route untuk mengedit profil user */
 Route::post('/profile/proses', [PostController::class, 'debug']);
 
 
 /** TUNDA */
 /** route untuk melihat card postingan */
-Route::get('/post/{id}', [PostController::class, 'show_byId'])->middleware('auth');
+Route::get('/post/{id}', [PostController::class, 'show_byId']);
 
 
 /** route untuk halaman chat */
 /** livewire routes  */
-Route::get('/users',CreateChat::class)->name('users')->middleware('auth');
-Route::get('/chat{key?}',Main::class)->name('chat')->middleware('auth');
+Route::get('/users',CreateChat::class)->name('users');
+Route::get('/chat{key?}',Main::class)->name('chat');
 
 // /** route untuk melihat barang berdasarkan kategori */  
 // Route::get('/homebycategory/{category}', [PostController::class, 'show_byCategory']);
