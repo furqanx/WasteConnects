@@ -20,7 +20,7 @@
 
         <ul class="navbar-nav ms-auto">
            <li class="nav-item">
-             <a class="nav-link" href="/logout"><img src="img/box-arrow-in-right.svg"> Log out</a>
+             <a class="nav-link" href="/logout"><img src="{{ asset('img/box-arrow-in-right.svg') }}"> Log out</a>
            </li>
         </ul>
 
