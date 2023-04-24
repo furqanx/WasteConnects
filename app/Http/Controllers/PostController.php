@@ -45,6 +45,6 @@ class PostController extends Controller
     {
         /** perhatikan lagi nanti disini  */
         $products = Product::where('kategori_sampah', $category)->get();
-        return view('home', ['products' => $products]);
+        return view('home', compact('products'));
     }
 }
