@@ -43,6 +43,7 @@ Route::get('/home/{category}', [PostController::class, 'show_byCategory']);
 /** route ke halaman login  */
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/authenticate', [LoginController::class, 'authenticate']);
+/** perlu di perbaiki  */ 
 Route::post('/logout', [LoginController::class, 'logout']);
 
 
