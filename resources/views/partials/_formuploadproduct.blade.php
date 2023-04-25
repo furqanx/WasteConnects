@@ -10,7 +10,6 @@
         @endif --}}
 
         <form action="/uploadproduct/store" method="post" enctype="multipart/form-data">
-            {{-- {{ csrf_field() }} --}}
             @csrf
 
             <div class="form-group">
