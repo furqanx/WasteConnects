@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function index ()
+    {
+        return view('home', [
+            "products" => Product::latest()->filter()->get()
+        ]);
+    }
+
     /** method ini berfungsi untuk menampilkan postingan 
      * 
      * penggunaanya untuk menampilkan card postingan barang

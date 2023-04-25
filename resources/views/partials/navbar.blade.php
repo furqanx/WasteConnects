@@ -24,8 +24,8 @@
            </li>
         </ul>
 
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
+        <form class="d-flex" action="/post">
+          <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search" name="search" value="{{ request('search') }}">
           <button class="btn btn-outline-success" type="submit">Cari</button>
         </form>
       </div>

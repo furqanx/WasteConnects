@@ -83,6 +83,10 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 // Route::post('/profile/proses', [PostController::class, 'debug']);
 
 
+/** route untuk search bar */
+Route::get('/post', [PostController::class, 'index']);
+
+
 /** TUNDA */
 /** route untuk melihat card postingan */
 Route::get('/post/{id}', [PostController::class, 'show_byId']);
