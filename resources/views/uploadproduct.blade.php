@@ -4,9 +4,8 @@
 
     <!-- komponen untuk navbar -->
     @include('partials.navbar')
-
     
     <!-- komponen untuk form upload -->
-    @include('partials.formuploadproduct')
+    @include('partials._formuploadproduct')
     
 @endsection

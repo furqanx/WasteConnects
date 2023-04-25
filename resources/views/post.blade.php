@@ -7,6 +7,6 @@
 
     
     <!-- komponen untuk kartu postingan sampah -->
-    @include('partials.productpost')
+    @include('partials._productpost')
 
 @endsection

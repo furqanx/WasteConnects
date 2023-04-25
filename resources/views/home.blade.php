@@ -4,19 +4,15 @@
 
     <!-- komponen untuk navbar -->
     @include('partials.navbar')
-    
 
     <!-- komponen untuk panel kategori -->
-    @include('partials.categorypanel')
-
-    
+    @include('partials._categorypanel')
     
     <div class="container-fluid bg-success">
         <span class="text-light"><b>Rekomendasi</b></span>
     </div>
 
-
-    <!-- komponen untuk daftar postingan sampah-->
-    @include('partials.productlist')
+    <!-- komponen untuk postingan sampah-->
+    @include('partials._productlist')
     
 @endsection

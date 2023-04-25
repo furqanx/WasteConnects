@@ -10,6 +10,8 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\CathegoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CategoryController;
+
 
 use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Livewire\Chat\Main;
@@ -34,7 +36,7 @@ Route::get('/', function () {
 
 /** route ke halaman home */
 Route::get('/home', [PostController::class, 'showall']);
-Route::get('/home/{category}', [PostController::class, 'show_byCategory']);
+Route::get('/home/{category}', [CategoryController::class, 'show'])->name('home.category');
 
 
 
