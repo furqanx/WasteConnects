@@ -60,7 +60,7 @@
 
 
 /** kode css untuk halaman kategori **/
-.cathegory_wrapper {
+/* .cathegory_wrapper {
     width: 100%;
     height: 70px;
 }
@@ -74,10 +74,10 @@
     margin: 10px 20px 10px 10px;
 }
 
-.userprofile_img {
+.userprofile_img { */
     /* margin-left: 160px; */
-    margin-left: 270px;
-}
+    /* margin-left: 270px;
+} */
 /** kode css untuk halaman kategori **/
 
 
@@ -158,7 +158,9 @@ a.none {
   }
 
 
+
 /* 768 kebawah, div yang ada class desktop tdk di display */
+/** tampilan desktop */
 @media only screen and (min-width: 769px) {
   div.phone {
     display: none;
@@ -181,6 +183,7 @@ a.none {
   }
 }
 
+/** tampilan handphone/tab */
 @media only screen and (max-width: 768px) {
   div.desktop {
     display: none;
