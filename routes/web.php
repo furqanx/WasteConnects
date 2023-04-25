@@ -46,7 +46,7 @@ Route::get('/home/{category}', [CategoryController::class, 'show'])->name('home.
 /** route ke halaman login  */
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/authenticate', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
