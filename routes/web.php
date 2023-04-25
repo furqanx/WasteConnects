@@ -94,8 +94,8 @@ Route::get('/post/{id}', [PostController::class, 'show_byId']);
 
 /** route untuk halaman chat */
 /** livewire routes  */
-Route::get('/users',CreateChat::class)->name('users');
-Route::get('/chat{key?}',Main::class)->name('chat');
+Route::get('/users', [CreateChat::class, 'render'])->name('users');
+Route::get('/chat{key?}', [Main::class, 'render'])->name('chat');
 
 // /** route untuk melihat barang berdasarkan kategori */  
 // Route::get('/homebycategory/{category}', [PostController::class, 'show_byCategory']);
