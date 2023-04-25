@@ -11,6 +11,7 @@ use App\Http\Controllers\CathegoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProfileController;
 
 
 use App\Http\Livewire\Chat\CreateChat;
@@ -35,7 +36,7 @@ Route::get('/', function () {
 
 
 /** route ke halaman home */
-Route::get('/home', [PostController::class, 'showall']);
+Route::get('/home', [PostController::class, 'showall'])->name('home');
 Route::get('/home/{category}', [CategoryController::class, 'show'])->name('home.category');
 
 
@@ -68,11 +69,18 @@ Route::post('/uploadproduct/store', [UploadController::class, 'store']);
 Route::post('/uploadproduct/debug', [UploadController::class, 'debug']);
 
 
+
+/** route ke halaman profile */
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+
+
+
 /** TUNDA */
 /** route ke halaman profile */
-Route::get('/profile/{id}', [PostController::class, 'show_byId']);
+// Route::get('/profile/{id}', [PostController::class, 'show_byId']);
 /** DEBUG route untuk mengedit profil user */
-Route::post('/profile/proses', [PostController::class, 'debug']);
+// Route::post('/profile/proses', [PostController::class, 'debug']);
 
 
 /** TUNDA */
