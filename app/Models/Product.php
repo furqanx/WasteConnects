@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
+    use HasFactory;
+
     public function scopeFilter ($query) 
     {
         if(request('search')){
@@ -17,5 +19,8 @@ class Product extends Model
         }
     }
 
-    use HasFactory;
+    public function User () 
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }
