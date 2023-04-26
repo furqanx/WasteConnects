@@ -81,6 +81,14 @@
 /** kode css untuk halaman kategori **/
 
 
+
+/** CSS untuk fitur Chat **/
+.chat_container {
+  
+}
+
+
+
 /** pop up **/
 .popup {
     display: grid;
