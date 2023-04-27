@@ -1,9 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
-
-    <!-- komponen untuk navbar -->
-    @include('partials.navbar')
 
     <div class="">
             <div class="container py-5 h-100">

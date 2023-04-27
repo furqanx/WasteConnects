@@ -10,7 +10,7 @@ use App\Models\Product;
 class UploadController extends Controller
 {
     public function index(){
-		return view('uploadproduct');
+		return view('pages.uploadpost');
 	}
 
 	public function store(Request $request)

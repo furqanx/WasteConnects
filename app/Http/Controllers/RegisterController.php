@@ -8,7 +8,7 @@ use App\Models\User;
 class RegisterController extends Controller
 {
     public function index () {
-        return view('register.index');
+        return view('auth.register');
     }
 
     public function store (Request $request) {
@@ -38,7 +38,7 @@ class RegisterController extends Controller
 
         // User::create($request->all());
 
-        return redirect('/login');
+        return redirect('auth.login');
     }
 
     public function debug () {

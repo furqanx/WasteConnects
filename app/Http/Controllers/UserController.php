@@ -15,7 +15,7 @@ class UserController extends Controller
         $alamat = "Lamteumen";
         $peran = "provider";
 
-        return view('firstpersonprofile', [
+        return view('pages.profile', [
             'nama_user' => $nama,
             'email_user' => $email,
             'alamat_user' => $alamat,

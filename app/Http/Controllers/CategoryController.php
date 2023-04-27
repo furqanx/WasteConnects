@@ -17,6 +17,6 @@ class CategoryController extends Controller
     {
         $products = Product::where('kategori_sampah', $category)->get();
 
-        return view('home', compact('products'));
+        return view('pages.home', compact('products'));
     }
 }

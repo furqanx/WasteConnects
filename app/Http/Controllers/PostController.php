@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function index ()
     {
-        return view('home', [
+        return view('pages.home', [
             "products" => Product::latest()->filter()->get()
         ]);
     }
@@ -22,7 +22,7 @@ class PostController extends Controller
     {
         $products = Product::all();
         
-        return view('home', compact('products'));
+        return view('pages.home', compact('products'));
     }
     
 
@@ -36,6 +36,6 @@ class PostController extends Controller
     {
         $products = Product::find($id);
 
-        return view('post', compact('products'));
+        return view('pages.post', compact('products'));
     }
 }
