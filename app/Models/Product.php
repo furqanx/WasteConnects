@@ -19,7 +19,7 @@ class Product extends Model
         }
     }
 
-    public function User () 
+    public function User() 
     {
         return $this->belongsTo('App\Models\User');
     }

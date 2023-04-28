@@ -9,7 +9,8 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('profile') }}">Profil</a>
+            {{-- <a class="nav-link" href="{{ route('profile.show', auth()->user()->id) }}">Profil</a> --}}
+            <a class="nav-link" href="{{ route('profile.show') }}">Profil</a>
           </li>
 
           <li class="nav-item">
@@ -24,7 +25,7 @@
            </li>
         </ul>
 
-        <form class="d-flex" action="/post">
+        <form class="d-flex" action="{{ route('post.search') }}">
           <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search" name="search" value="{{ request('search') }}">
           <button class="btn btn-outline-success" type="submit">Cari</button>
         </form>

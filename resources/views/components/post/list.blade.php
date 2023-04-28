@@ -20,7 +20,7 @@
       
     @endforeach
 
-    <a class="add-post-btn" href="/uploadproduct">
+    <a class="add-post-btn" href="{{ route('post.create') }}">
         <img class="add-post-img" src="{{ asset('img/add-button.png') }}" alt="add-button icon" width="50" height="50">
     </a>
 
