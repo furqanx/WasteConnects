@@ -8,12 +8,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
-    public function index ()
+    public function index()
     {
-        return view('profile');
+        return view('pages.profile');
+    }
+
+    public function show($id)
+    {
+        $users = User::findOrFail($id);
+
+        return view('pages.profile', compact('users'));
     }
 
     /**
@@ -21,7 +29,7 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        return view('pages.editprofile', [
             'user' => $request->user(),
         ]);
     }
@@ -39,7 +47,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('pages.editprofile')->with('status', 'profile-updated');
     }
 
     /**

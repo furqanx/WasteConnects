@@ -1,9 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
-
-    <!-- komponen untuk navbar -->
-    @include('partials.navbar')
 
     <div class="">
             <div class="container py-5 h-100">
@@ -37,7 +34,8 @@
                           </div>
                           <div class="d-flex pt-1">
                             <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>
-                            <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
+                            {{-- <a href="{{ route('profile.edit', auth()->user()->id) }}"><button type="button" class="btn btn-primary flex-grow-1">Edit</button></a> --}}
+                            <a href="{{ route('profile.edit') }}"><button type="button" class="btn btn-primary flex-grow-1">Edit</button></a>
                           </div>
                         </div>
                       </div>
@@ -47,29 +45,5 @@
               </div>
             </div>
     </div>
-
-    {{-- <div class="">
-        <div class="d-flex flex-wrap align">
-  
-            @foreach ($products as $product)
-              <a href="/post/{{ $product->id }}}">
-                <div class="card mt-2 mb-2 size-item">
-                  <img
-                    class="size-item"
-                    src="{{ asset('images/' . $product->path_gambar_sampah) }}"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <h6 class="card-title text-success" style="font-size: small">
-                      <b>{{ $product->nama_sampah }}</b>
-                    </h6>
-                    <p class="card-text">Rp. {{ $product->harga_sampah }}/kg</p>
-                  </div>
-                </div>
-              </a>
-            @endforeach
-        
-        </div>
-    </div> --}}
     
 @endsection

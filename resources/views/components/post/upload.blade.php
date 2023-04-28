@@ -1,15 +1,15 @@
 <div class="container">    
     <div class="col-lg-8 mx-auto my-5">	
 
-        {{-- @if(count($errors) > 0)
+        @if(count($errors) > 0)
         <div class="alert alert-danger">
             @foreach ($errors->all() as $error)
             {{ $error }} <br/>
             @endforeach
         </div>
-        @endif --}}
+        @endif
 
-        <form action="/uploadproduct/store" method="post" enctype="multipart/form-data">
+        <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">

@@ -1,52 +1,92 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layouts.app')
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+@section('content')
+
+    <div class="row justify-content-center ">
+        <div class="col-md-5">
+
+            <main class="form-signin">
+                <h1 class="h3 mb-3 fw-normal text-center">Register account</h1>
+
+                <form action="/register/store" method="post">
+                    @csrf
+
+                    {{-- <div class="form-group">
+                        <label for="imageFormInput">foto profil</label><br>
+                        <div id="imagePreview"></div> --}}
+                        {{-- <img src="img/profile.svg" class="image" /> --}}
+                        {{-- <input type="file" class="form-control" id="imageInput" multiple accept="image/*" onchange="handleFiles(this.files) name="product_image">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nameFormInput">Name</label><br>
+                        <input type="text" class="form-control" id="nameInput" placeholder="name">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="statusFormInput">status</label><br>
+                        <input type="text" class="form-control" id="statusInput" placeholder="status">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="DescriptionTextarea">Description</label><br>
+                        <textarea class="form-control" id="descriptionTextarea" rows="3" placeholder="describe yourself"></textarea>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="emailFormInput">email</label><br>
+                        <input type="text" class="form-control" id="emailInput" placeholder="name@gmail.com">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="addressFormInput">address</label><br>
+                        <input type="text" class="form-control" id="addressInput" placeholder="address">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="birthdayFormInput">birthday</label><br>
+                        <input type="date" class="form-control" id="birthdayInput">
+                    </div> --}}
+
+
+
+
+                    {{-- <div class="form-group">     
+                        <input type="file" class="form-control" id="imageInput" multiple accept="image/*" onchange="handleFiles(this.files)" name="profile_picture">
+                    </div> --}}
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="nameInput" name="name" placeholder="name" @required(true)>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="emailInput" name="email" placeholder="name@gmail.com" @required(true)>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="password" @required(true)>
+                    </div>
+                    
+                    {{-- <div class="form-group">
+                        <input type="text" class="form-control" id="statusInput" name="status" placeholder="status">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="descriptionTextarea" name="description" rows="3" placeholder="describe yourself"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="addressInput" name="address" placeholder="address">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="birthdayInput" name="birthday">
+                    </div> --}}
+            
+                    <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
+                </form>
+
+                <small class="d-block text-center mt-3">Have registered ? <a href="/login">Login</a></small>
+            </main>
+
         </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    </div>
+    
+@endsection
