@@ -10,7 +10,6 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 
-
 use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Livewire\Chat\Main;
 
