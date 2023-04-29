@@ -4,23 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
-
 
 class Product extends Model
 {
     use HasFactory;
 
-    public function scopeFilter ($query) 
+    protected $fillable = ['name', 'description', 'price', 'location', 'user_id'];
+    /**
+     * get the user that own the Product
+     */
+    public function user(): BelongsTo
     {
-        if(request('search')){
-            return $query->where('nama_sampah','like','%' . request('search') . '%')
-                    ->orWhere('deskripsi_sampah', 'like', '%' . request('search') . '%');
-        }
+        return $this->belongsTo(User::class);
     }
 
-    public function User() 
+    /**
+     * get the categories for the product
+     */
+    public function categories()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsToMany(Category::class);
     }
 }

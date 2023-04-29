@@ -6,7 +6,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -19,16 +18,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'nama_user',
+        'name',
         'email',
         'password',
-        'alamat_user',
-        'tanggal_lahir_user',
-        'jenis_kelamin_user',
-        'path_gambar_user',
     ];
-
-    // protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -49,13 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Product() 
+    /**
+     * Get the products of user
+     */
+    public function products(): HasMany
     {
-        return $this->hasMany('App\Models\Product');
-    }
-
-    public function Conversation()
-    {
-        return $this->hasMany('App\Models\Conversation');
+        return $this->hasMany(Product::class);
     }
 }
