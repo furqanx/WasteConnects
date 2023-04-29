@@ -9,10 +9,9 @@
         <img src="{{ asset('img/price-tag.svg') }}" width="20" height="20"> Rp. {{ $products->harga_sampah }}/Kg<br>
         <img src="{{ asset('img/location icon.svg') }}" width="20" height="20"> {{ $products->lokasi_sampah }}<br><br>
         {{ $products->deskripsi_sampah }}</p>
-        <a href="/profile/{{ $products->user_id }}">
+        <a href="{{ route('profile.show', $products->user_id) }}">
             <button type="button" class="btn btn-outline-success mx-auto">kunjungi pemilik</button>
         </a>
-
     </div>
 
 </div>

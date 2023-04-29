@@ -32,9 +32,9 @@ Route::get('/', function () {
 
 
 /** Route ke halaman home */
-Route::get('/home', [HomeController::class, 'index'])->name('home');  
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 /** Route untuk melihat postingan berdasarkan kategori */
-Route::get('/home/{category}', [CategoryController::class, 'index'])->name('home.category');  
+Route::get('/home/{category}', [CategoryController::class, 'index'])->name('home.category');
 /** Route untuk search bar */
 Route::get('/search', [PostController::class, 'search'])->name('post.search');
 
@@ -49,8 +49,8 @@ Route::get('/post/{id}', [PostController::class, 'show'])->name('post.show');
 Route::post('/post/debug', [PostController::class, 'debug'])->name('post.debug');
 
 
-/** Route untuk menampilkan profile */  
-Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');  
+/** Route untuk menampilkan profile user */
+Route::get('/profile/{id?}', [ProfileController::class, 'show'])->name('profile.show');
 /** Route untuk menampilkan form untuk mengedit profile tertentu. */
 Route::get('/profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 /** Route untuk Memperbarui data profile tertentu. */
@@ -61,7 +61,7 @@ Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile
 
 /** route ke halaman login  */
 Route::get('/login', [LoginController::class, 'index']);
-Route::post('/login/authenticate', [LoginController::class, 'authenticate']); 
+Route::post('/login/authenticate', [LoginController::class, 'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
