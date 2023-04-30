@@ -31,9 +31,19 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile{id?}', [ProfileController::class, 'show'])->name('profile');
+
     Route::get('/pofile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    /** Route ke halaman form mengupload barang */
+    Route::get('/post/create', [ProductController::class, 'create'])->name('post.create');
+    /** Route untuk menyimpan data product */
+    Route::post('/post', [ProductController::class, 'store'])->name('post.store');
+    /** Route untuk melihat card postingan */
+    Route::get('/post/{id}', [ProductController::class, 'show'])->name('post.show');
+    /** DEBUG */
+    Route::post('/post/debug', [ProductController::class, 'debug'])->name('post.debug');
 });
 
 require __DIR__ . '/auth.php';
