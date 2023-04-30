@@ -10,8 +10,8 @@
              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                  <li class="nav-item">
-                     {{-- <a class="nav-link" href="{{ route('profile.show', auth()->user()->id) }}">Profil</a> --}}
-                     <a class="nav-link" href="{{ route('profile.edit') }}">Profil</a>
+                     {{-- <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a> --}}
+                     <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a>
                  </li>
 
                  <li class="nav-item">
