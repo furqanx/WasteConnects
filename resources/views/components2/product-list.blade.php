@@ -16,9 +16,9 @@
         </div>
     @endforeach
 
-    {{-- Tombol untuk menambah postingan,
-         <a class="add-post-btn" href="{{ route('post.create') }}">
+    
+    <a class="add-post-btn" href="{{ route('post.create') }}">
         <img class="add-post-img" src="{{ asset('img/add-button.png') }}" alt="add-button icon" width="50" height="50">
-    </a> --}}
+    </a> 
 
 </div>
