@@ -11,7 +11,9 @@
 
                  <li class="nav-item">
                      {{-- <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a> --}}
-                     <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a>
+                    
+                    <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a>
+                     
                  </li>
 
                  <li class="nav-item">
