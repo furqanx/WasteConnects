@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->string('user_image')->nullable();
             $table->string('user_address')->nullable();
             $table->string('user_gender')->nullable();
-            $table->string('path_gambar_user')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
