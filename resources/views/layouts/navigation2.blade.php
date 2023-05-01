@@ -11,8 +11,10 @@
 
                  <li class="nav-item">
                      {{-- <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a> --}}
-                    
+                    @auth
+                        
                     <a class="nav-link" href="{{ route('profile.edit', auth()->user()->id) }}">Profil</a>
+                    @endauth
                      
                  </li>
 
