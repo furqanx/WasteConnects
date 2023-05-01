@@ -1,7 +1,8 @@
  <!-- navbar utama -->
  <nav class="navbar navbar-expand-md navbar-light bg-light">
      <div class="container-fluid">
-         <a class="navbar-brand text-success" href="{{ route('products') }}"><img src="{{ asset('waste_connect_logo.png') }}" width="180" height="40"></a>
+         <a class="navbar-brand text-success" href="{{ route('products') }}"><img
+                 src="{{ asset('waste_connect_logo.png') }}" width="180" height="40"></a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
@@ -11,11 +12,11 @@
 
                  <li class="nav-item">
                      {{-- <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a> --}}
-                    @auth
-                        
-                    <a class="nav-link" href="{{ route('profile.edit', auth()->user()->id) }}">Profil</a>
-                    @endauth
-                     
+                     @auth
+                         <a class="nav-link" href="{{ route('profile.edit') }}">Profil</a>
+                         <a class="nav-link" href="{{ route('myproducts') }}">Sampah Saya</a>
+                     @endauth
+
                  </li>
 
                  <!-- <li class="nav-item">
@@ -39,12 +40,13 @@
 
                  @auth
                      <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                             @csrf
+                         </form>
+                         <a class="nav-link" href="{{ route('logout') }}"
+                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                             Logout
+                         </a>
                      </li>
                  @endauth
 
