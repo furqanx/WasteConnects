@@ -2,7 +2,7 @@
 
     @foreach ($products as $product)
         <div class="card mt-2 mb-2 size-item">
-            <a href="#">
+            <a href="{{ route('product.show', ['id' => $product->id]) }}">
                 <div>
                     <img class="size-item" src="{{ asset('product_images/no-image.png') }}" alt="Card image cap" />
                     <div class="card-body">
@@ -15,10 +15,5 @@
             </a>
         </div>
     @endforeach
-
-    
-    <a class="add-post-btn" href="{{ route('post.create') }}">
-        <img class="add-post-img" src="{{ asset('img/add-button.png') }}" alt="add-button icon" width="50" height="50">
-    </a> 
 
 </div>
