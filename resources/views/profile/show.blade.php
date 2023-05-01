@@ -15,7 +15,7 @@
                             style="width: 180px; border-radius: 10px;">
                         </div>
                         <div class="flex-grow-1 ms-3">
-                          <h5 class="mb-1">{{ $users->user_name }}</h5>
+                          <h5 class="mb-1">{{ $users->name }}</h5>
                           <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
                             style="background-color: #efefef;">
                           <div class="d-flex pt-1">

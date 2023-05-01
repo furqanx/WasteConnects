@@ -18,17 +18,17 @@
         @method('patch')
 
         <div>
-        <div class="form-group">
+        <!-- <div class="form-group">
                 <div id="imagePreview"></div>
                 <label for="nameFormInput">Upload Foto Profile</label><br>
                 {{-- <img src="img/profile.svg" class="image" /> --}}
                 <input type="file" class="form-control" id="imageInput" multiple accept="image/*" onchange="handleFiles(this.files)" name="user_image">
             </div>
-            <br>
+            <br> -->
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
-            
+        
         </div>
 
         <div>
@@ -55,7 +55,7 @@
             @endif
         </div>
 
-        <div>
+        <!-- <div>
             <x-input-label for="user_address" :value="__('Alamat')" />
             <x-text-input id="user_addres" name="user_address" type="text" class="mt-1 block w-full" :value="old('user_address', $user->user_address)" required autofocus autocomplete="user_address" />
             <x-input-error class="mt-2" :messages="$errors->get('user_address')" />
@@ -66,7 +66,7 @@
             <x-text-input id="user_gender" name="user_gender" type="text" class="mt-1 block w-full" :value="old('user_gender', $user->user_gender)" required autofocus autocomplete="user_gender" />
             <x-input-error class="mt-2" :messages="$errors->get('user_gender')" />
         <div>
-        <br>
+        <br> -->
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 

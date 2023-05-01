@@ -1,7 +1,7 @@
  <!-- navbar utama -->
  <nav class="navbar navbar-expand-md navbar-light bg-light">
      <div class="container-fluid">
-         <a class="navbar-brand text-success" href="{{ route('products') }}"><b>Waste Connect</b></a>
+         <a class="navbar-brand text-success" href="{{ route('products') }}"><img src="{{ asset('waste_connect_logo.png') }}" width="180" height="40"></a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
@@ -12,13 +12,13 @@
                  <li class="nav-item">
                      {{-- <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a> --}}
                     
-                    <a class="nav-link" href="{{ route('profile', auth()->user()->id) }}">Profil</a>
+                    <a class="nav-link" href="{{ route('profile.edit', auth()->user()->id) }}">Profil</a>
                      
                  </li>
 
-                 <li class="nav-item">
+                 <!-- <li class="nav-item">
                      <a class="nav-link" href="#">Pesan</a>
-                 </li>
+                 </li> -->
 
              </ul>
 
