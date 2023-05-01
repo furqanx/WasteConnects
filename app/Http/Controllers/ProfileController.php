@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,14 +11,6 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function show($id)
-    {
-        $users = User::findOrFail($id);
-        //dd($users);
-
-        return view('profile.show', compact('users'));
-    }
-
     /**
      * Display the user's profile form.
      */
@@ -35,7 +26,6 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -43,7 +33,7 @@ class ProfileController extends Controller
         }
 
         $request->user()->save();
-        // dd($request->all());
+
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
