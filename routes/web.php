@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Halaman utama yang menampilkan semua produk
 Route::get('/', [ProductController::class, 'index'])->name('products');
+
+// Melihat info profile berdasarkan id
+Route::get('/user/{id?}', [UserController::class, 'show'])->name('user.show');
+
+// Untuk Melihat Products dari user tertentu.
+Route::get('/user/{id}/products', [UserController::class, 'userProducts'])->name('user.products');
+
+// Melihat info product berdasarkan id
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
 /*
 -pada Laravel Breeze, rute untuk halaman login dan register dapat ditemukan di dalam file routes/auth.php.
@@ -30,20 +41,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile{id?}', [ProfileController::class, 'show'])->name('profile');
-
-    Route::get('/pofile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    /** Route ke halaman form mengupload barang */
-    Route::get('/post/create', [ProductController::class, 'create'])->name('post.create');
-    /** Route untuk menyimpan data product */
-    Route::post('/post', [ProductController::class, 'store'])->name('post.store');
-    /** Route untuk melihat card postingan */
-    Route::get('/post/{id}', [ProductController::class, 'show'])->name('post.show');
-    /** DEBUG */
-    Route::post('/post/debug', [ProductController::class, 'debug'])->name('post.debug');
+    
+    // Untuk Melihat Product Sendiri
+    Route::get('/myproducts', [ProductController::class, 'myproducts'])->name('myproducts');
+    
 });
 
 require __DIR__ . '/auth.php';
