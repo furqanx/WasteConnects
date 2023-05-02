@@ -141,6 +141,7 @@ div.size-item {
 }
 img.size-item {
   height: 8rem;
+  width: 100%;
 }
 }
 
@@ -154,6 +155,7 @@ div.size-item {
 }
 img.size-item {
   height: 12rem;
+  width: 100%;
 }
 }
 /* 352-480 */
@@ -168,6 +170,7 @@ div.size-item {
 }
 img.size-item {
   height: 8rem;
+  width: 100%;
 }
 }
 /* 400-435 */
@@ -182,6 +185,7 @@ div.size-item {
 }
 img.size-item {
   height: 8rem;
+  width: 100%;
 }
 }
 /* 436-459 */
@@ -196,6 +200,7 @@ div.size-item {
 }
 img.size-item {
   height: 8rem;
+  width: 100%;
 }
 }
 /* 460-480 */
@@ -210,6 +215,7 @@ div.size-item {
 }
 img.size-item {
   height: 8rem;
+  width: 100%;
 }
 }
 
@@ -225,5 +231,6 @@ div.size-item {
 }
 img.size-item {
   height: 8rem;
+  width: 100%;
 }
 }
