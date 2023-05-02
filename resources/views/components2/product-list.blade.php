@@ -16,4 +16,17 @@
         </div>
     @endforeach
 
+    @if (Route::currentRouteName() == 'myproducts')
+        <div class="card mt-2 mb-2 size-item">
+                <div>
+                    <img class="size-item" src="{{ asset('product_images/no-image.png') }}" alt="Card image cap" />
+                    <div class="card-body">
+                        Tambah Sampah Anda
+                    </div>
+                </div>
+            <div class="card-footer">
+                <a href="{{ route('product.create') }}" class="btn btn-success">Tambah</a>
+            </div>
+        </div>
+    @endif
 </div>
