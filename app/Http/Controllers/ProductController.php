@@ -15,12 +15,21 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $categories = Category::all();
+
         return view('main', compact('products', "categories"));
+    }
+
+    public function create()
+    {
+        $categories = Category::all();
+
+        return view('product.create', compact('categories'));
     }
 
     public function show($id)
     {
         $product = Product::findOrFail($id);
+
         return view('product.show', compact('product'));
     }
 
