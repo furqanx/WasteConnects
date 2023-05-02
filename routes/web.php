@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
+    Route::get('/createProduct', [ProductController::class, 'create'])->name('product.create');
     // Untuk Melihat Product Sendiri
     Route::get('/myproducts', [ProductController::class, 'myproducts'])->name('myproducts');
     
