@@ -46,9 +46,8 @@
 
              </ul>
 
-             <form class="d-flex" action="#">
-                 <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search" name="search"
-                     value="{{ request('search') }}">
+             <form class="d-flex" action="{{ route('products.search') }}" method="GET">
+                 <input class="form-control me-2" type="text" placeholder="Cari..." aria-label="Search" name="query">
                  <button class="btn btn-outline-success" type="submit">Cari</button>
              </form>
          </div>

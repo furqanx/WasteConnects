@@ -1,6 +1,7 @@
 @extends('layouts.app2')
 
 @section('content')
+
     Id      : {{ $user->id }}
     <br>
     Nama    : {{ $user->name }}

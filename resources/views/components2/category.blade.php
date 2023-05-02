@@ -4,7 +4,7 @@
         <div class="p-2 h5 "><b>Kategori</b></div>
         <div class="p-2">
             @foreach ($categories as $category)
-                <a href="#" class="none mx-2">{{ $category->name }}</a>
+                <a href="{{ route('products.searchByCategory', $category->id) }}" class="none mx-2">{{ $category->name }}</a>
             @endforeach
         </div>
     </div>

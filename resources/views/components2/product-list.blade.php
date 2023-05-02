@@ -2,15 +2,15 @@
 
     @foreach ($products as $product)
         <div class="card mt-2 mb-2 size-item">
-            <a href="{{ route('product.show', ['id' => $product->id]) }}">
-                <div>
-                    <img class="size-item" src="{{ asset('product_images/no-image.png') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h6 class="card-title text-success" style="font-size: small">
-                            <b>{{ $product->name }}</b>
-                        </h6>
-                        <p class="card-text">Rp. {{ $product->price }}</p>
-                    </div>
+            <a style="text-decoration: none" href="{{ route('product.show', ['id' => $product->id]) }}">
+                <img class="size-item" src="{{ asset('storage/product_images/' . $product->image) }}"
+                    alt="{{ $product->name }}">
+
+                <div class="card-body">
+                    <h6 class="card-title text-dark">
+                        <b>{{ $product->name }}</b>
+                    </h6>
+                    <p class="card-text text-success">Rp. {{ $product->price }}</p>
                 </div>
             </a>
         </div>
@@ -18,15 +18,10 @@
 
     @if (Route::currentRouteName() == 'myproducts')
         <div class="card mt-2 mb-2 size-item">
-                <div>
-                    <img class="size-item" src="{{ asset('product_images/no-image.png') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        Tambah Sampah Anda
-                    </div>
-                </div>
-            <div class="card-footer">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
                 <a href="{{ route('product.create') }}" class="btn btn-success">Tambah</a>
             </div>
         </div>
     @endif
+
 </div>
