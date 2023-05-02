@@ -22,8 +22,8 @@ class Product extends Model
     /**
      * get the categories for the product
      */
-    public function categories()
+    public function category(): BelongsTo
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }
