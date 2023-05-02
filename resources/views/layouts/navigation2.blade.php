@@ -28,12 +28,6 @@
              <ul class="navbar-nav ms-auto">
                  @guest
                      <li class="nav-item">
-                         <a class="nav-link" href="{{ route('login') }}"> Login </a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link">/</a>
-                     </li>
-                     <li class="nav-item">
                          <a class="nav-link" href="{{ route('register') }}"> Daftar </a>
                      </li>
                  @endguest
