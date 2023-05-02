@@ -22,7 +22,10 @@ Route::get('/', function () {
 
 // Halaman utama yang menampilkan semua produk
 Route::get('/', [ProductController::class, 'index'])->name('products');
-
+// Mendapatkan barang berdasarkan category
+Route::get('/category/{category}', [ProductController::class, 'searchByCategory'])->name('products.searchByCategory');
+// Mencari berdasarkan nama barang
+Route::get('/search', [ProductController::class, 'search'])->name('products.search');
 // Melihat info profile berdasarkan id
 Route::get('/user/{id?}', [UserController::class, 'show'])->name('user.show');
 
@@ -31,6 +34,7 @@ Route::get('/user/{id}/products', [UserController::class, 'userProducts'])->name
 
 // Melihat info product berdasarkan id
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+
 
 /*
 -pada Laravel Breeze, rute untuk halaman login dan register dapat ditemukan di dalam file routes/auth.php.
@@ -46,7 +50,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
-    Route::get('/createProduct', [ProductController::class, 'create'])->name('product.create');
+    Route::get('/createProduct', [ProductController::class, 'create'])->name('product.create'); //route untuk pergi ke halaman menambahkan product
+    Route::post('/createProduct', [ProductController::class, 'store'])->name('product.store');  //route untuk mengirim data ke server dengan method POST
+    Route::get('/editProduct/{id}', [ProductController::class, 'edit'])->name('product.edit');  //route untuk pergi ke halaman edit product
+    Route::patch('/editProduct/{id}', [ProductController::class, 'update'])->name('product.update');    //route untuk mengirim editan data product 
+    
     // Untuk Melihat Product Sendiri
     Route::get('/myproducts', [ProductController::class, 'myproducts'])->name('myproducts');
     
