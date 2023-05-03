@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -150,6 +151,8 @@ class ProductController extends Controller
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
             $image->storeAs('public/product_images', $filename);
+            // Hapus file gambar lama dari server
+            Storage::delete('public/product_images/' . $product->image);
             $product->image = $filename;
         }
 
