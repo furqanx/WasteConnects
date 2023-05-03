@@ -4,7 +4,10 @@
         <div class="p-2 h5 "><b>Kategori</b></div>
         <div class="p-2">
             @foreach ($categories as $category)
-                <a href="{{ route('products.searchByCategory', $category->id) }}" class="none mx-2">{{ $category->name }}</a>
+                @if ($category->products()->has('category')->count() > 0)
+                    <a href="{{ route('products.searchByCategory', $category->id) }}"
+                        class="none mx-2">{{ $category->name }}</a>
+                @endif
             @endforeach
         </div>
     </div>
