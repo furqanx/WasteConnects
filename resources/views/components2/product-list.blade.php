@@ -1,6 +1,6 @@
 <div class="d-flex flex-wrap align mx-5">
     
-    <!-- Carousel -->
+    {{-- <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
@@ -29,7 +29,7 @@
         <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
-    </div>
+    </div> --}}
 
     @foreach ($products as $product)
         <div class="card mt-2 mb-2 size-item">
