@@ -20,7 +20,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Cari berdasarkan nama
+     * Search berdasarkan nama
      */
     public function search(Request $request, $query = null)
     {
