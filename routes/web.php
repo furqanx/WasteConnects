@@ -29,7 +29,7 @@ Route::get('/search', [ProductController::class, 'search'])->name('products.sear
 // Melihat info profile berdasarkan id
 Route::get('/user/{id?}', [UserController::class, 'show'])->name('user.show');
 
-// Untuk Melihat Products dari user tertentu.
+// Melihat Products dari user tertentu.
 Route::get('/user/{id}/products', [UserController::class, 'userProducts'])->name('user.products');
 
 // Melihat info product berdasarkan id
