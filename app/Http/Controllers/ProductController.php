@@ -227,13 +227,8 @@ class ProductController extends Controller
             ->where('user_id', auth()->id())
             ->firstOrFail();
 
-        // Mengelola file gambar yang diupload
-        $image = $product->image;
-        $filename = time() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/product_images', $filename);
         // Hapus file gambar lama dari server
         Storage::delete('public/product_images/' . $product->image);
-        $product->image = $filename;
 
         // Hapus produk
         $product->delete();
