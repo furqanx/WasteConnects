@@ -85,7 +85,7 @@
 
         <button type="submit" class="btn btn-success mt-2 mb-5">Simpan Perubahan</button>
 
-        <a href="{{ route('products.destroy', $product->id) }}" class="btn btn-danger mt-2 mb-5" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $product->id }}">Delete</a>
+        <a href="{{ route('products.destroy', $product->id) }}" class="btn btn-danger mt-2 mb-5" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $product->id }}">Hapus</a>
 
 <!-- Modal Konfirmasi Hapus -->
 <div class="modal fade" id="deleteModal{{ $product->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $product->id }}" aria-hidden="true">
