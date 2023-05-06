@@ -134,7 +134,11 @@ class ProductController extends Controller
         // Mengelola file gambar yang diupload
         $image = $request->file('image');
         $filename = time() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/product_images', $filename);
+        $path = 'public/product_images';
+        if (!Storage::exists($path)) {
+            Storage::makeDirectory($path);
+        }
+        $image->storeAs($path, $filename);
         $product->image = $filename;
 
         // Menyimpan data category_id dari request ke product
@@ -222,6 +226,14 @@ class ProductController extends Controller
         $product = Product::where('id', $id)
             ->where('user_id', auth()->id())
             ->firstOrFail();
+
+        // Mengelola file gambar yang diupload
+        $image = $product->image;
+        $filename = time() . '_' . $image->getClientOriginalName();
+        $image->storeAs('public/product_images', $filename);
+        // Hapus file gambar lama dari server
+        Storage::delete('public/product_images/' . $product->image);
+        $product->image = $filename;
 
         // Hapus produk
         $product->delete();
