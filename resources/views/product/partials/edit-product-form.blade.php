@@ -85,11 +85,33 @@
 
         <button type="submit" class="btn btn-success mt-2 mb-5">Simpan Perubahan</button>
 
+        <a href="{{ route('products.destroy', $product->id) }}" class="btn btn-danger mt-2 mb-5" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $product->id }}">Hapus</a>
+
+<!-- Modal Konfirmasi Hapus -->
+<div class="modal fade" id="deleteModal{{ $product->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $product->id }}" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel{{ $product->id }}">Konfirmasi Hapus Sampah</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Apakah Anda yakin ingin menghapus sampah ini?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display: inline;">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger mt-2 mb-5">Hapus Sampah</button>
+            <button type="submit" class="btn btn-danger">Hapus Sampah</button>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+       
     </form>
 
 </div>
