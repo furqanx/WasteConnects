@@ -15,11 +15,6 @@
         </div>
 
         <div class="form-group">
-            <label for="location">Lokasi</label>
-            <input type="text" class="form-control" id="location" name="location" maxlength="50" required>
-        </div>
-
-        <div class="form-group">
             <label for="price">Harga</label>
             <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
                 name="price" required>
@@ -35,6 +30,21 @@
             <select class="form-control" id="category" name="category_id">
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Alamat</label>
+            <select class="form-control" id="address" name="address_id">
+                @foreach ($addresses as $address)
+                    @if ($address_current == $address)
+                        <option value="{{ $address->id }}" selected>
+                            {{ $address->province }}/{{ $address->city }}/{{ $address->district }}</option>
+                    @else
+                        <option value="{{ $address->id }}">
+                            {{ $address->province }}/{{ $address->city }}/{{ $address->district }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>

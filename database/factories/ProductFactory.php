@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Address;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -23,9 +24,9 @@ class ProductFactory extends Factory
             'name' => Str::limit($this->faker->name, 23), // maksimal 24 karakter
             'description' => $this->faker->sentence,
             'price' => $this->faker->randomFloat(2, 1, 1000),
-            'location' => $this->faker->city,
             'image' => 'no-image.png',
             'category_id' => Category::inRandomOrder()->first()->id,
+            'address_id' => Address::inRandomOrder()->first()->id,
             'user_id' => function () {
                 return \App\Models\User::factory()->create()->id;
             },

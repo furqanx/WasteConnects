@@ -10,7 +10,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price', 'location', 'user_id'];
+    protected $fillable = ['name', 'description', 'price', 'user_id'];
     /**
      * get the user that own the Product
      */
@@ -25,5 +25,10 @@ class Product extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
     }
 }

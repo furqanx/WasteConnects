@@ -2,10 +2,12 @@
 
 @section('content')
 
-    <div class="container-fluid bg-success">
-        <span class="text-light"><b>Cari </b></span>
-    </div>
+    <!-- komponen panel kategori -->
+    @include('components2.category')
 
+    <div class="container-fluid bg-success">
+        <span class="text-light"><b>Hasil Rekomendasi kecamatan {{ $address_current->district }}</b></span>
+    </div>
 
     <!-- komponen daftar postingan sampah-->
     @include('components2.product-list')

@@ -17,12 +17,6 @@
         </div>
 
         <div class="form-group">
-            <label for="location">Lokasi</label>
-            <input type="text" class="form-control" id="location" name="location" value="{{ $product->location }}"
-                maxlength="50" required>
-        </div>
-
-        <div class="form-group">
             <label for="price">Harga</label>
             <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
                 name="price" value="{{ $product->price }}" required>
@@ -41,6 +35,21 @@
                         <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                     @else
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endif
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Alamat</label>
+            <select class="form-control" id="address" name="address_id">
+                @foreach ($addresses as $address)
+                    @if ($product->address == $address)
+                        <option value="{{ $address->id }}" selected>
+                            {{ $address->province }}/{{ $address->city }}/{{ $address->district }}</option>
+                    @else
+                        <option value="{{ $address->id }}">
+                            {{ $address->province }}/{{ $address->city }}/{{ $address->district }}</option>
                     @endif
                 @endforeach
             </select>
@@ -75,5 +84,12 @@
         </div>
 
         <button type="submit" class="btn btn-success mt-2 mb-5">Simpan Perubahan</button>
+
+        <form action="{{ route('products.destroy', $product) }}" method="POST" style="display: inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger mt-2 mb-5">Hapus Sampah</button>
+        </form>
     </form>
+
 </div>

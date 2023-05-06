@@ -10,7 +10,8 @@
             </div>
         </div>
     @endif
-
+    address_current = {{ $address_current }}
+    <br>
     Id : {{ $product->id }}
     <br>
     Name : {{ $product->name }}
@@ -19,12 +20,10 @@
     <br>
     Price : {{ $product->price }}
     <br>
-    Location : {{ $product->location }}
+    Address : {{ $product->address->district }}
     <br>
     Category : {{ $product->category->name }}
     <br>
     User Product Ini :
     <a href="{{ route('user.show', ['id' => $product->user->id]) }}">{{ $product->user->name }}</a>
-
-    
 @endsection

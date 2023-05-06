@@ -22,8 +22,6 @@ Route::get('/', function () {
 
 // Halaman utama yang menampilkan semua produk
 Route::get('/', [ProductController::class, 'index'])->name('products');
-// Mendapatkan barang berdasarkan category
-Route::get('/category/{category}', [ProductController::class, 'searchByCategory'])->name('products.searchByCategory');
 // Mencari berdasarkan nama barang
 Route::get('/search', [ProductController::class, 'search'])->name('products.search');
 // Melihat info profile berdasarkan id
@@ -54,7 +52,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/createProduct', [ProductController::class, 'store'])->name('product.store');  //route untuk mengirim data ke server dengan method POST
     Route::get('/editProduct/{id}', [ProductController::class, 'edit'])->name('product.edit');  //route untuk pergi ke halaman edit product
     Route::patch('/editProduct/{id}', [ProductController::class, 'update'])->name('product.update');    //route untuk mengirim editan data product 
-    
+    Route::delete('/editProduct/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+
     // Untuk Melihat Product Sendiri
     Route::get('/myproducts', [ProductController::class, 'myproducts'])->name('myproducts');
     
