@@ -22,9 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'user_image',
-        'user_gender',
-        'user_address',
+        'whatsapp',
     ];
 
     /**
