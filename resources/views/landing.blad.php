@@ -144,4 +144,60 @@
         </div>
     </section><!-- End Featured Services Section --> --}}
 
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Us</h2>
+                {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                    Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img src="{{ asset('img/team-photo.jpeg') }}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> --}}
+                    <p class="fst-italic">
+                        Kami di WasteConnect berkomitmen untuk mengubah cara orang berinteraksi dengan sampah.
+                        Dengan platform inovatif kami, kami menghubungkan mereka yang memiliki sampah dengan mereka yang
+                        mencarinya untuk keperluan mereka sendiri. Tujuan kami adalah menciptakan lingkungan yang lebih
+                        berkelanjutan dengan memfasilitasi daur ulang dan penggunaan kembali sampah.
+                    </p>
+                    {{-- <ul>
+                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </li>
+                        <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate
+                            velit.</li>
+                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
+                            fugiat nulla pariatur.</li>
+                    </ul> --}}
+                    <p>
+                        Visi kami adalah membangun komunitas yang sadar lingkungan di mana sampah dianggap sebagai
+                        sumber daya berharga.
+                        Kami ingin menciptakan platform yang memudahkan individu dan bisnis dalam mencari, memperoleh,
+                        dan memanfaatkan
+                        sampah dengan cara yang bertanggung jawab. Dengan demikian, kami berharap dapat berkontribusi
+                        pada penurunan
+                        limbah dan pemulihan lingkungan.
+                    </p>
+                    <p>
+                        Misi kami adalah menyediakan solusi yang inovatif dan efisien untuk menghubungkan pengguna
+                        dengan sampah yang mereka
+                        butuhkan atau ingin tawarkan. Kami berkomitmen untuk memberikan pengalaman yang aman, nyaman,
+                        dan andal bagi
+                        pengguna kami. Kami juga bertujuan untuk meningkatkan kesadaran akan pentingnya daur ulang dan
+                        mengurangi dampak
+                        negatif limbah terhadap lingkungan.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Us Section -->
+
     @endsection
