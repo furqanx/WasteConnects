@@ -43,4 +43,69 @@
     </div>
 </header><!-- End Header -->
 
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active" style="background-image: url({{ asset('img/carousel-1.jpeg') }})">
+                <div class="carousel-container">
+                    <div class="container">
+                        <h2 class="animate_animated animate_fadeInDown">Selamat Datang di WasteConnect!</h2>
+                        <p class="animate_animated animate_fadeInUp">Temukan peluang emas dalam sampah.
+                            Menghubungkan anda dengan pengguna yang mencari atau menawarkan sampah berkualitas.
+                            Bergabunglah dan jadilah bagian dari gerakan daur ulang yang berkelanjutan.</p>
+                        <a href="#about" class="btn-get-started animate_animated animate_fadeInUp scrollto">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item" style="background-image: url({{ asset('img/carousel-2.jpeg') }})">
+                <div class="carousel-container">
+                    <div class="container">
+                        <h2 class="animate_animated animate_fadeInDown">Sampah yang Anda cari, ada di sini!</h2>
+                        <p class="animate_animated animate_fadeInUp">Cari dan temukan jenis sampah yang Anda butuhkan.
+                            Dari kertas hingga logam, pilihlah dengan mudah melalui aplikasi kami.
+                            Kembangkan usaha daur ulang Anda dengan WasteConnect.</p>
+                        <a href="#about" class="btn-get-started animate_animated animate_fadeInUp scrollto">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="background-image: url({{ asset('img/carousel-3.jpeg') }})">
+                <div class="carousel-container">
+                    <div class="container">
+                        <h2 class="animate_animated animate_fadeInDown">Berikan nilai tambah pada sampah Anda!</h2>
+                        <p class="animate_animated animate_fadeInUp">Tawarkan sampah yang Anda miliki dan temukan
+                            peminatnya.
+                            Dengan WasteConnect, jual atau berbagi sampah dengan mudah. Satu langkah kecil untuk
+                            mengurangi limbah dan mendukung lingkungan.</p>
+                        <a href="#about" class="btn-get-started animate_animated animate_fadeInUp scrollto">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+    </div>
+</section><!-- End Hero -->
+
 @endsection
