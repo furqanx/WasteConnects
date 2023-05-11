@@ -1,4 +1,4 @@
-<div class="d-flex flex-wrap align mx-5">
+<div class="d-flex flex-wrap align mx-3">
     @if (empty(json_decode($products)))
         <div class="alert alert-warning mt-4" role="alert">
             Maaf, tidak ada sampah yang ditemukan.
