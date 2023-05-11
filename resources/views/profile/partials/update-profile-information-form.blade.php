@@ -53,7 +53,7 @@
 
         <div>
             <x-input-label for="whatsapp" :value="__('Whatsapp')" />
-            <x-text-input id="whatsapp" name="whatsapp" type="text" class="mt-1 block w-full" :value="old('whatsapp', $user->whatsapp)"
+            <x-text-input id="whatsapp" name="whatsapp" type="text" placeholder="08xxxxxxxxxx" class="mt-1 block w-full" :value="old('whatsapp', $user->whatsapp)"
                 required autofocus autocomplete="whatsapp" />
             <x-input-error class="mt-2" :messages="$errors->get('whatsapp')" />
             @if (session('status'))
