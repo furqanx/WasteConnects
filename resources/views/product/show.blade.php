@@ -34,7 +34,7 @@
                             <a href="{{ route('user.products', $product->user->id) }}">Lihat Sampah Provider Ini</a>
                         </small>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto mt-2">
                         <a href="https://wa.me/{{ $product->user->whatsapp }}" target="_blank"
                             class="btn btn-light text-success" style="background-color: white">
                             <span class="me-2">
@@ -46,9 +46,11 @@
                 </div>
             </div>
         </div>
-        <span class="text-muted"><b>Sampah dari Provider ini</b></span>
+        <div class="mt-4">
+            <span class="text-muted"><b>Sampah dari Provider ini</b></span>
+        </div>
     </div>
-    <div class="mt-3">
+    <div class="mt-1">
         <!-- komponen daftar postingan sampah-->
         @include('components2.product-list')
     </div>
