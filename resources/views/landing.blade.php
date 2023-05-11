@@ -777,6 +777,3 @@
 
 
 @endsection
-
-
-@endsection
