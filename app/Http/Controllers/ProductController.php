@@ -72,7 +72,7 @@ class ProductController extends Controller
 
         // Jika atribut whatsapp masih kosong, tambahkan aturan validasi khusus pada objek ProfileUpdateRequest
         if (!$user->whatsapp) {
-            return Redirect::route('profile.edit')->with('warning', 'Harap lengkapi nomor WhatsApp Anda terlebih dahulu sebelum dapat membuat sampah');
+            return Redirect::route('profile.edit')->with('warning', 'Silakan cantumkan nomor WhatsApp Anda agar pembeli dapat menghubungi dengan mudah, terima kasih :) ');
         }
 
         $categories = Category::all();
