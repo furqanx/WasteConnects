@@ -13,6 +13,7 @@
     </script>
     <!-- Styles -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/landing.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -29,6 +30,8 @@
     </header>
 
     @yield('content')
+
+    <script src="{{ asset('js/landing.js') }}"></script>
 
 </body>
 
