@@ -45,7 +45,7 @@
                         <div class="scroll-item col-sm">
                             <a class="none text-success" href="#" onclick="searchByCategory({{ $category->id }})">
                                 <img class="mx-3" width="50" height="50"
-                                    src="{{ asset('img/water-bottle.png') }}" alt="{{ $category->name }}">
+                                    src="{{ asset('img/' . $category->image) }}" alt="{{ $category->name }}">
                                 <p><b>{{ $category->name }}</b></p>
                             </a>
                         </div>
@@ -53,7 +53,7 @@
                         <div class="scroll-item col-sm">
                             <a class="none text-success" href="#" onclick="searchByCategory({{ $category->id }})">
                                 <img class="mx-3" width="50" height="50"
-                                    src="{{ asset('img/water-bottle.png') }}" alt="{{ $category->name }}">
+                                    src="{{ asset('img/' . $category->image ) }}" alt="{{ $category->name }}">
                                 <p>{{ $category->name }}</p>
                             </a>
                         </div>
@@ -64,7 +64,7 @@
             @foreach ($categories as $category)
                 <div class="scroll-item col-sm">
                     <a class="none text-success" href="#" onclick="searchByCategory({{ $category->id }})">
-                        <img class="mx-3" width="50" height="50" src="{{ asset('img/water-bottle.png') }}"
+                        <img class="mx-3" width="50" height="50" src="{{ asset('img/' . $category->image ) }}"
                             alt="{{ $category->name }}">
                         <p>{{ $category->name }}</p>
                     </a>

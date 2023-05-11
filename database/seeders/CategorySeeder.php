@@ -14,15 +14,33 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::create([
+            'name' => 'Kaca',
+            'image' => 'category1.png',
+        ]);
+
+        Category::create([
             'name' => 'Plastik',
+            'image' => 'category2.png',
+        ]);
+
+        Category::create([
+            'name' => 'Kertas',
+            'image' => 'category3.png',
+        ]);
+
+        Category::create([
+            'name' => 'Logam',
+            'image' => 'category4.png',
+        ]);
+
+        Category::create([
+            'name' => 'Tekstil',
+            'image' => 'category5.png',
         ]);
 
         Category::create([
             'name' => 'Elektronik',
-        ]);
-
-        Category::create([
-            'name' => 'Kain',
+            'image' => 'category6.png',
         ]);
     }
 }

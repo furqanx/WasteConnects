@@ -63,7 +63,7 @@ class ProductController extends Controller
             })
             ->get();
 
-        return view('search', compact('products', 'addresses', 'categories', 'address_current', 'category_current'));
+        return view('search', compact('products', 'addresses', 'categories', 'address_current', 'category_current', 'query'));
     }
 
     public function create(Request $request)
@@ -88,11 +88,12 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $addresses = Address::all();
+        $products = $product->user->products;
 
         // mendapatkan address_current dengan address_id_session
         $address_current = Address::find($request->session()->get('address_id_session'));
 
-        return view('product.show', compact('product', 'addresses', 'address_current'));
+        return view('product.show', compact('product', 'products', 'addresses', 'address_current'));
     }
 
     /**
