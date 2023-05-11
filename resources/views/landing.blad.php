@@ -746,5 +746,37 @@
         </div>
     </section><!-- End Contact Section --> --}}
 
+</main><!-- End #main -->
 
-    @endsection
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="d-flex">
+
+        <div class="container"></div>
+
+        <div class="container">
+            {{-- <h3>WasteConnect</h3> --}}
+            <div class="copyright">
+                &copy; Copyright <strong><span>WasteConnect</span></strong>. All Rights Reserved
+            </div>
+        </div>
+
+        <div class="container">
+            {{-- @if(!Request::is('landing'))
+            <a href="/landing">
+                <h5>Tentang WasteConnect</h5>
+            </a>
+            @endif --}}
+        </div>
+
+    </div>
+</footer><!-- End Footer -->
+
+{{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a> --}}
+
+
+@endsection
+
+
+@endsection
