@@ -10,20 +10,46 @@
             </div>
         </div>
     @endif
-    address_current = {{ $address_current }}
-    <br>
-    Id : {{ $product->id }}
-    <br>
-    Name : {{ $product->name }}
-    <br>
-    Description : {{ $product->description }}
-    <br>
-    Price : {{ $product->price }}
-    <br>
-    Address : {{ $product->address->district }}
-    <br>
-    Category : {{ $product->category->name }}
-    <br>
-    User Product Ini :
-    <a href="{{ route('user.show', ['id' => $product->user->id]) }}">{{ $product->user->name }}</a>
+    <div class="container mt-4 mb-2">
+        <div class="card">
+            <img src="{{ asset('storage/product_images/' . $product->image) }}" class="card-img-top" alt="Gambar Product">
+            <div class="card-body">
+                <h2 class="card-title">{{ $product->name }}</h2>
+                <h4 class="card-subtitle mb-2 text-success">Rp. {{ $product->price }}</h4>
+                <p class="card-text">Lokasi: {{ $product->address->province }}, {{ $product->address->city }},
+                    {{ $product->address->district }}</p>
+                <hr>
+                <h4 class="card-subtitle text-muted">Deskripsi</h4>
+                <p class="card-text mt-2">{{ $product->description }}</p>
+            </div>
+            <div class="card-footer bg-light">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <img src="{{ asset('img/profile.png') }}" class="rounded-circle" width="50" height="50"
+                            alt="Provider">
+                    </div>
+                    <div class="col">
+                        <h5 class="mb-0">{{ $product->user->name }}</h5>
+                        <small class="text-muted">
+                            <a href="{{ route('user.products', $product->user->id) }}">Lihat Sampah Provider Ini</a>
+                        </small>
+                    </div>
+                    <div class="col-auto">
+                        <a href="https://wa.me/{{ $product->user->whatsapp }}" target="_blank"
+                            class="btn btn-light text-success" style="background-color: white">
+                            <span class="me-2">
+                                <img src="{{ asset('img/whatsapp.png') }}" alt="WhatsApp" width="30" height="30">
+                            </span>
+                            Hubungi Penjual
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <span class="text-muted"><b>Sampah dari Provider ini</b></span>
+        <!-- komponen daftar postingan sampah-->
+        @include('components2.product-list')
+    </div>
 @endsection
