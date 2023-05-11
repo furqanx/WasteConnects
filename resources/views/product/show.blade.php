@@ -46,9 +46,9 @@
                 </div>
             </div>
         </div>
+        <span class="text-muted"><b>Sampah dari Provider ini</b></span>
     </div>
     <div class="mt-3">
-        <span class="text-muted"><b>Sampah dari Provider ini</b></span>
         <!-- komponen daftar postingan sampah-->
         @include('components2.product-list')
     </div>
