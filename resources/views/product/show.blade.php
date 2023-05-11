@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-auto">
                         <a href="https://wa.me/{{ $product->user->whatsapp }}" target="_blank"
-                            class="btn btn-light text-success">
+                            class="btn btn-light text-success" style="background-color: white">
                             <span class="me-2">
                                 <img src="{{ asset('img/whatsapp.png') }}" alt="WhatsApp" width="30" height="30">
                             </span>
@@ -46,31 +46,10 @@
                 </div>
             </div>
         </div>
-        <div class="mt-3">
-            <span class="text-muted"><b>Sampah dari Provider ini</b></span>
-            <div class="d-flex flex-wrap align mx-5">
-                @if (empty(json_decode($products)))
-                    <div class="alert alert-warning mt-4" role="alert">
-                        Maaf, tidak ada sampah selain ini yang ditemukan.
-                    </div>
-                @else
-                    @foreach ($products as $product)
-                        <div class="card mt-2 mb-2 size-item">
-                            <a style="text-decoration: none" href="{{ route('product.show', ['id' => $product->id]) }}">
-                                <img class="size-item" src="{{ asset('storage/product_images/' . $product->image) }}"
-                                    alt="{{ $product->name }}">
-    
-                                <div class="card-body">
-                                    <h6 class="card-title text-dark">
-                                        <b>{{ $product->name }}</b>
-                                    </h6>
-                                    <p class="card-text text-success">Rp. {{ $product->price }}</p>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                @endif
-            </div>
-        </div>
+    </div>
+    <div class="mt-3">
+        <span class="text-muted"><b>Sampah dari Provider ini</b></span>
+        <!-- komponen daftar postingan sampah-->
+        @include('components2.product-list')
     </div>
 @endsection
