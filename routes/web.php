@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/landing', function () {
+    return view('landing');
+});
+
 // Halaman utama yang menampilkan semua produk
 Route::get('/', [ProductController::class, 'index'])->name('products');
 // Mencari berdasarkan nama barang
@@ -43,20 +47,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
+
     Route::get('/createProduct', [ProductController::class, 'create'])->name('product.create'); //route untuk pergi ke halaman menambahkan product
-    Route::post('/createProduct', [ProductController::class, 'store'])->name('product.store');  //route untuk mengirim data ke server dengan method POST
-    Route::get('/editProduct/{id}', [ProductController::class, 'edit'])->name('product.edit');  //route untuk pergi ke halaman edit product
-    Route::patch('/editProduct/{id}', [ProductController::class, 'update'])->name('product.update');    //route untuk mengirim editan data product 
+    Route::post('/createProduct', [ProductController::class, 'store'])->name('product.store'); //route untuk mengirim data ke server dengan method POST
+    Route::get('/editProduct/{id}', [ProductController::class, 'edit'])->name('product.edit'); //route untuk pergi ke halaman edit product
+    Route::patch('/editProduct/{id}', [ProductController::class, 'update'])->name('product.update'); //route untuk mengirim editan data product 
     Route::delete('/editProduct/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 
     // Untuk Melihat Product Sendiri
     Route::get('/myproducts', [ProductController::class, 'myproducts'])->name('myproducts');
-    
+
 });
 
 require __DIR__ . '/auth.php';
