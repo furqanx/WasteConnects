@@ -23,7 +23,8 @@ class ProductController extends Controller
             // mendapatkan address_current dengan address_id_session
             $address_current = Address::find($request->session()->get('address_id_session'));
             $products = Product::where('address_id', $request->session()->get('address_id_session'))->get();
-            return view('main', compact('products', 'categories', 'addresses', 'address_current'));
+            $products_count = Product::where('address_id', $request->session()->get('address_id_session'))->count();
+            return view('main', compact('products', 'categories', 'addresses', 'address_current', 'products_count'));
         }
 
         return view('getuserAddress', compact('addresses'));
